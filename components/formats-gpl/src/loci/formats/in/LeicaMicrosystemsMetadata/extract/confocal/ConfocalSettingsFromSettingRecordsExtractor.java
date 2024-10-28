@@ -170,7 +170,7 @@ public class ConfocalSettingsFromSettingRecordsExtractor extends Extractor {
         LaserSetting selectedLaserSetting = null;
         for (LaserSetting laserSetting : laserSettings) {
           if (laserSetting.wavelength < detectorSetting.cutIn) {
-            if (selectedLaserSetting == null || (laserSetting.laser != null && selectedLaserSetting.laser.wavelength < laserSetting.laser.wavelength))
+            if (selectedLaserSetting == null || (laserSetting.laser != null && selectedLaserSetting.laser != null && selectedLaserSetting.laser.wavelength < laserSetting.laser.wavelength))
               selectedLaserSetting = laserSetting;
           }
         }
