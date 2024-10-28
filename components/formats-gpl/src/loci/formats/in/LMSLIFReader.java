@@ -74,7 +74,7 @@ public class LMSLIFReader extends LMSFileReader {
 
   /** Offsets to memory blocks, paired with their corresponding description. */
   private List<Long> offsets;
-  private List<String> memoryBlockIds = new ArrayList<>();
+  private List<String> memoryBlockIds;
 
   private int lastChannelLutColorIndex = 0;
   private long endPointer;
@@ -360,6 +360,7 @@ public class LMSLIFReader extends LMSFileReader {
     in = new RandomAccessInputStream(id);
     in.setEncoding(ENCODING);
     offsets = new ArrayList<Long>();
+    memoryBlockIds = new ArrayList<String>();
 
     in.order(true);
 
